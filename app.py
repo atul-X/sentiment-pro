@@ -8,7 +8,7 @@ from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import CountVectorizer
 from Az import text_process
 app = Flask(__name__)
-import flask_excel as excel
+
 
 @app.route('/')
 def home():
