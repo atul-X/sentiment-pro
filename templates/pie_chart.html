@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{{ title }}</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+  	<style>
+        body{
+            height: 100%;
+            
+	font:15px/1.5 Arial, Helvetica,sans-serif;
+	padding: 0px;
+	background-color: aliceblue;
+}
+.container{
+	width:100%;
+	margin: auto;
+	overflow: hidden;
+}
+header{
+	background:#30336B;#35434a;
+	border-bottom:#448AFF 3px solid;
+	height:40px;
+	width:100%;
+	padding-top:30px;
+}
+.main-header{
+			text-align:center;
+			background-color: red;
+			height:60px;
+			width:20%;
+			margin:0px;
+		}
+#brandname{
+	float:left;
+	
+	color: #fff;
+    
+    background:#192A56;
+	margin: 10px;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 1em;
+}
+header h2{
+	text-align:center;
+	color:#fff;
+    
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    table-layout: 100px;
+    font-size: 1em;}
+    .btn-info {background-color: gainsboro;
+	height:40px;
+	width:100px;} /* Blue */
+.btn-info {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50; /* Green */
+    margin-top: 20px;
+}
+        .btn-info1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50; /* Green */
+    margin-top: 20px;
+            margin-left: 10px;
+}
+.resultss{
+	border-radius: 15px 50px;
+    background: #345fe4;
+    padding: 20px; 
+    width: 200px;
+    height: 150px;
+}
+    </style>
+</head>
+
+<body><header>
+		<div class="container" style="width: 100%, margin:auto,overflow: hidden " >
+		<div id="brandname">
+		
+			Machine Learning Prediction with Flask
+		</div>
+		
+		<h2>Sentimental analysis of  reviews  using machine learning and Use Excel files for Reviews Analysis</h2>
+		
+		
+	</div>
+	</header>
+
+        
+ <form   method=post enctype=multipart/form-data>
+    <input type=file
+    class=btn-info1 name=file>
+    <input type=submit class=btn-info value=Upload>
+    </form>
+  <center>
+    <h1>{{ title }}</h1>
+  </center>
+  <center>
+    <canvas id="chart" width="500" height="300"></canvas>
+    <p id="caption">The chart is displaying a bar chart of  Reviews categies.</p>
+    <script>
+      // bar chart data
+      var barData = {
+        labels : [
+          {% for item in labels %}
+           "{{ item }}",
+          {% endfor %}
+	],
+
+        datasets : [{
+          fillColor: "rgba(151,187,205,0.2)",
+          strokeColor: "rgba(151,187,205,1)",
+          pointColor: "rgba(151,187,205,1)",
+          data : [
+            {% for item in values %}
+               "{{ item }}",
+              {% endfor %}
+	    ]
+          }
+        ]
+      }
+
+     // get bar chart canvas
+     var mychart = document.getElementById("chart").getContext("2d");
+
+       steps = 10
+       max = {{max}}
+
+     // draw bar chart
+     new Chart(mychart).Bar(barData, {
+       scaleOverride: true,
+       scaleSteps: steps,
+       scaleStepWidth: Math.ceil(max / steps),
+       scaleStartValue: 0,
+       scaleShowVerticalLines: true,
+       scaleShowGridLines : true,
+       barShowStroke : true,
+       scaleShowLabels: true
+       }
+     );
+
+    </script>
+  </center>
+</body>
+</html>
