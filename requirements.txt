@@ -1,0 +1,19 @@
+
+click==6.7
+cltk==0.1.83
+Flask==0.12
+Flask-Cors==3.0.2
+Flask-WTF==0.14.2
+gunicorn==19.9.0
+itsdangerous==0.24
+lxml==3.7.2
+nltk==3.4.5
+regex==2018.2.21
+request==1.0.2
+requests==2.12.4
+rope-py3k==0.9.4.post1
+selenium==3.14.1
+twython==3.7.0
+WTForms==2.1
+pandas==0.25
+scikit-learn ==0.22
