@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
 	<title></title>
 <style>
-    body{
-	font:15px/1.5 Arial, Helvetica,sans-serif;
-	padding: 0px;
-	background-image:url("{{url_for('static', filename='117435.jpg')}}")
-}
+        body{
+            height: 50%;
+            background-color: #5a5a5a;
+            align-content: center;
+            background-image: url({{url_for('static', filename='ml.jpg')}});
+	font:15px/1.5 Arial, Helvetica,sans-serif;}
 .container{
+    align-items: center;
 	width:100%;
 	margin: auto;
 	overflow: hidden;
+    
 }
+        .container  h1{
+            font-family: cursive;
+            font-size: 2em;
+            color: white;s
+        }
 header{
-	background:#30336B;#35434a;
+	background:#35434a;
 	border-bottom:#448AFF 3px solid;
-	height:120px;
+	height:150px;
 	width:100%;
 	padding-top:30px;
 }
 .main-header{
 			text-align:center;
-			background-color: blue;
+			background-color: red;
 			height:100px;
 			width:100%;
 			margin:0px;
-		}
+		}    
 #brandname{
 	float:left;
-	
+	padding-right: 20px;
 	color: #fff;
     
     background:#192A56;
@@ -39,33 +48,81 @@ header{
 }
 header h2{
 	text-align:center;
-    font-family: 'ZCOOL QingKe HuangYou', cursive;
-    text-align:center;
-    table-layout: auto;
 	color:#fff;
-	
+    
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    table-layout: 100px;
+    font-size: 2em;
+    
 }
-.btn-info {background-color: #2196F3;
+.btn-info {background-color: gainsboro;
 	height:40px;
 	width:100px;} /* Blue */
-.btn-info:hover {background: #0b7dda;}
+
+.btn-info {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50; /* Green */
+    margin-top: 20px; 
+        align-content: center}      
 .resultss{
 	border-radius: 15px 50px;
     background: #345fe4;
     padding: 20px; 
     width: 200px;
     height: 150px;
-}</style>
+}
+    </style>
 </head>
 <body>
-	<header>
-		<div class="container">
-		<div id="brandname">
-			ML Web Application
-		</div>
-		<h2>Sentimental analysis of  reviews  using machine learning</h2>
+ <div class="navbar-wrapper">
+        <div class="container">
+            <nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Machine Learning</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="https://sentiment12345.herokuapp.com/">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="{{ url_for('charts') }}">Click Here For Excel</a></li>
+        <li><a href="https://iriswebapplication.herokuapp.com/">Iris Web Appliction</a></li>
+       
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> About Us </a></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<header>
+       	<div class="container">
+       	    <div class="row">
+       	        <div class="col-md-4">
+       	            <h1>Machine Learning Prediction with Flask</h1>
+       	            
+       	        </div>
+       	        <div class="col-md-4"></div>
+       	        <div class="col-md-4"><h1>Sentimental analysis of  reviews  using machine learning</h1></div>
+       	    </div>
+       	</div>
 		
-	</div>
+		
+
+		
+		
+
 	</header>
 	<p style="color:white;font-size:20;text-align: center;"><b>Results for Review</b></p>
 	<div class="results">
@@ -74,7 +131,7 @@ header h2{
 	{% elif prediction == 'bad'%}
 	<h2 style="color:green;">BAD</h2>
 	{% elif prediction == 'neutral'%}
-	<h2 style="color: aqua;">Neutral</h2>
+	<h2 style="color: lawngreen;">Neutral</h2>
 	
 	{% endif %}
 	</div>

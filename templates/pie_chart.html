@@ -4,9 +4,11 @@
   <meta charset="utf-8" />
   <title>{{ title }}</title>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+  <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
   	<style>
         body{
             height: 100%;
+            }
             
 	font:15px/1.5 Arial, Helvetica,sans-serif;
 	padding: 0px;
@@ -18,9 +20,9 @@
 	overflow: hidden;
 }
 header{
-	background:#30336B;#35434a;
+	background:#35434a;
 	border-bottom:#448AFF 3px solid;
-	height:40px;
+	height:100px;
 	width:100%;
 	padding-top:30px;
 }
@@ -36,7 +38,7 @@ header{
 	
 	color: #fff;
     
-    background:#192A56;
+    
 	margin: 10px;
     font-family: 'ZCOOL QingKe HuangYou', cursive;
     font-size: 1em;
@@ -73,6 +75,37 @@ header h2{
 }
     </style>
 </head>
+         <div class="navbar-wrapper">
+        <div class="container">
+            <nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Machine Learning</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="https://sentiment12345.herokuapp.com/">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="{{ url_for('charts') }}">Click Here For Excel</a></li>
+        <li><a href="https://iriswebapplication.herokuapp.com/">Iris Web Appliction</a></li>
+       
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> About Us </a></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
 <body><header>
 		<div class="container" style="width: 100%, margin:auto,overflow: hidden " >
@@ -87,7 +120,7 @@ header h2{
 	</div>
 	</header>
 
-        
+   <div>     
  <form   method=post enctype=multipart/form-data>
     <input type=file
     class=btn-info1 name=file>
@@ -142,5 +175,6 @@ header h2{
 
     </script>
   </center>
+  </div>
 </body>
 </html>

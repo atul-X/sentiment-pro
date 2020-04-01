@@ -3,25 +3,34 @@
 <head>
 	<title>Home</title>
 	<link rel="SHORTCUT ICON" href="{{url_for('static', filename='icon.png')}}">
+	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
 	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
 	<link href="https://fonts.googleapis.com/css?family=Six+Caps|ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+	<script src="{{url_for('static', filename='parallax.js')}}"></script>
+
 	<style>
         body{
             height: 50%;
+            background-color: #5a5a5a;
+            align-content: center;
             
-	font:15px/1.5 Arial, Helvetica,sans-serif;
-	padding: 0px;
-	background-image:url("{{url_for('static', filename='117435.jpg')}}")
-}
+	font:15px/1.5 Arial, Helvetica,sans-serif;}
 .container{
+    align-items: center;
 	width:100%;
 	margin: auto;
 	overflow: hidden;
+    background-image: url({{url_for('static', filename='ml.jpg')}};)
 }
+        .container  h1{
+            font-family: cursive;
+            font-size: 2em;
+            color: white;s
+        }
 header{
-	background:#30336B;#35434a;
+	background:#35434a;
 	border-bottom:#448AFF 3px solid;
-	height:120px;
+	height:150px;
 	width:100%;
 	padding-top:30px;
 }
@@ -31,10 +40,10 @@ header{
 			height:100px;
 			width:100%;
 			margin:0px;
-		}
+		}    
 #brandname{
 	float:left;
-	
+	padding-right: 20px;
 	color: #fff;
     
     background:#192A56;
@@ -85,22 +94,58 @@ function validateForm(f) {
 	
 </head>
 <body>
- 
-	<header>
-		<div class="container" style="width: 100%, margin:auto,overflow: hidden " >
-		<div id="brandname">
+         <div class="navbar-wrapper">
+        <div class="container">
+            <nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Machine Learning</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="https://sentiment12345.herokuapp.com/">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="{{ url_for('charts') }}">Click Here For Excel</a></li>
+        <li><a href="https://iriswebapplication.herokuapp.com/">Iris Web Appliction</a></li>
+       
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> About Us </a></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+       	<header>
+       	<div class="container">
+       	    <div class="row">
+       	        <div class="col-md-4">
+       	            <h1>Machine Learning Prediction with Flask</h1>
+       	            
+       	        </div>
+       	        <div class="col-md-4"></div>
+       	        <div class="col-md-4"><h1>Sentimental analysis of  reviews  using machine learning</h1></div>
+       	    </div>
+       	</div>
+            
 		
-			Machine Learning Prediction with Flask
-			<div><button class="btn-info" onclick="window.location.href = '{{ url_for('charts') }}';">Click Here for Excel</button></div>
-		</div>
+		
+
 		
 		
-		<h2>Sentimental analysis of  reviews  using machine learning</h2>
-		
-		
-	</div>
+
 	</header>
-	<div class="ml-container">
+
+	<div class="container"  >
 		<form name="myForm" action="{{ url_for('predict')}}" method="POST" onSubmit="return validateForm(myForm.message)">
 		<b><p style="color: white">Enter Your Review Here</p></b>
 		<!-- <input type="text" name="comment"/> -->
