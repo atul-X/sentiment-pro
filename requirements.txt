@@ -1,4 +1,3 @@
-
 click
 cltk
 Flask
@@ -9,9 +8,8 @@ itsdangerous
 lxml
 nltk
 regex
-request
-requests
-rope-py3k
+requests  # Replaced `request` with `requests`
+rope  # Updated from `rope-py3k`
 selenium
 twython
 WTForms
