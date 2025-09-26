@@ -1,0 +1,7 @@
+services:
+  # A web service
+  - type: web
+    name: sentiment-pro
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
