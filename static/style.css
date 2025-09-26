@@ -1,0 +1,86 @@
+body {
+  background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+  min-height: 100vh;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+}
+
+.navbar {
+  background: #222b45 !important;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.10);
+}
+
+.navbar-brand {
+  color: #fff !important;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 1.6rem;
+}
+
+.card {
+  border-radius: 1.2rem;
+  box-shadow: 0 6px 32px rgba(44, 62, 80, 0.10);
+  margin-top: 2rem;
+  background: #fff;
+}
+
+.form-control {
+  border-radius: 0.7rem;
+  border: 1px solid #e0eafc;
+  font-size: 1rem;
+  padding: 1rem;
+  background: #f8fafc;
+  transition: border-color 0.2s;
+}
+.form-control:focus {
+  border-color: #448aff;
+  box-shadow: 0 0 0 2px #448aff22;
+}
+
+.btn-primary {
+  background: #35434a;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.7rem 2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: background 0.2s;
+}
+.btn-primary:hover {
+  background: #448AFF;
+}
+
+.alert-success {
+  background: #e7f9ef;
+  color: #1a7f37;
+  border: none;
+}
+.alert-danger {
+  background: #fdecea;
+  color: #b71c1c;
+  border: none;
+}
+
+footer {
+  margin-top: 2rem;
+  color: #888;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 576px) {
+  .card {
+    margin-top: 1rem;
+    padding: 0.5rem;
+  }
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  .form-control {
+    font-size: 0.95rem;
+    padding: 0.7rem;
+  }
+  .btn-primary {
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+  }
+}
