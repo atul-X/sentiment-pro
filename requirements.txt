@@ -1,5 +1,4 @@
 click
-cltk
 Flask
 Flask-Cors
 Flask-WTF
@@ -15,3 +14,4 @@ twython
 WTForms
 pandas
 scikit-learn
+
