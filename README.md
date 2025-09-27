@@ -15,7 +15,9 @@ SentimentPro is a modular Flask web app with a clear separation between the web 
 ## About the Model & Training Data
 
 - **Model Type:** Multinomial Naive Bayes classifier (scikit-learn)
-- **Training Data:** Drugs.com Drug Review Dataset (from [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Drug+Review+Dataset+%28Drugs.com%29)), combining both train and test splits.
+- **Training Data:** Drugs.com Drug Review Dataset, combining both train and test splits. 
+    - [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Drug+Review+Dataset+%28Drugs.com%29)
+    - [Kaggle Dataset](https://www.kaggle.com/datasets/jessicali9530/kuc-hackathon-winter-2018?resource=download)
 - **Data Size:** ~215,000+ user reviews of medications.
 - **Labeling:**
     - Reviews are labeled as:

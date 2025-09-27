@@ -6,6 +6,7 @@ gunicorn
 itsdangerous
 lxml
 nltk
+numpy==2.3.3
 regex
 requests  # Replaced `request` with `requests`
 rope  # Updated from `rope-py3k`
@@ -14,4 +15,3 @@ twython
 WTForms
 pandas
 scikit-learn
-
