@@ -1,8 +1,8 @@
 import nltk
 import os
 
-# Add the project's nltk_data directory to the NLTK data path
-# This ensures that the data downloaded during the build is found at runtime.
+# Define the path to the local nltk_data directory and add it to NLTK's path.
+# This ensures that data copied during the build is found by the running application.
 project_root = os.path.dirname(os.path.abspath(__file__))
 nltk_data_path = os.path.join(project_root, 'nltk_data')
 if nltk_data_path not in nltk.data.path:
