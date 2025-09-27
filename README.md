@@ -37,23 +37,23 @@ SentimentPro is a modular Flask web app with a clear separation between the web 
 ### High-Level Architecture
 ```mermaid
 flowchart TD
-    User[User (Web Browser)] -->|HTTP| Flask[Flask Web App]
-    Flask -->|Text Input| Preprocess[Text Preprocessing (NLTK)]
-    Preprocess -->|Features| Model[Trained ML Model (scikit-learn)]
-    Model -->|Prediction| Flask
-    Flask -->|HTML Response| User
-    Flask -->|Excel Upload| Pandas[Pandas Data Processing]
+    User["User (Web Browser)"] -->|HTTP| FlaskApp["Flask Web App"]
+    FlaskApp -->|Text Input| Preprocess["Text Preprocessing (NLTK)"]
+    Preprocess -->|Features| Model["Trained ML Model (scikit-learn)"]
+    Model -->|Prediction| FlaskApp
+    FlaskApp -->|HTML Response| User
+    FlaskApp -->|Excel Upload| Pandas["Pandas Data Processing"]
     Pandas --> Preprocess
 ```
 
 ### Review Prediction Flow
 ```mermaid
 flowchart LR
-    A[User submits review] --> B[Text cleaned & tokenized (NLTK)]
-    B --> C[Stopwords & rare words removed]
-    C --> D[Vectorized (CountVectorizer)]
-    D --> E[Prediction (MultinomialNB)]
-    E --> F[Result shown in UI]
+    A["User submits review"] --> B["Text cleaned & tokenized (NLTK)"]
+    B --> C["Stopwords & rare words removed"]
+    C --> D["Vectorized (CountVectorizer)"]
+    D --> E["Prediction (MultinomialNB)"]
+    E --> F["Result shown in UI"]
 ```
 
 ## Getting Started
@@ -76,7 +76,22 @@ flask run
 ```
 Visit [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 
-### Production Deployment
+## Deployment on Render
+
+You can deploy SentimentPro to [Render](https://render.com/) as a free or paid web service.
+
+1. **Ensure these files are present in your repo root:**
+   - `app.py`, `requirements.txt`, `Procfile`, `render.yaml`, `Model.pickle`, `cv1`, `text_utils.py`, and the `templates/` and `static/` folders.
+2. **Push your code to GitHub.**
+3. **Create a new Web Service on Render:**
+   - Connect your GitHub repo
+   - Render will auto-detect `render.yaml` and build your app
+   - The service will use `gunicorn app:app` to start (see `Procfile`/`render.yaml`)
+4. **Access your app at the Render-provided URL.**
+
+**Note:** `Model.pickle` and `cv1` must be present in the root directory for the app to work.
+
+### Production Deployment (other platforms)
 - Use a WSGI server like Gunicorn (see `Procfile` for Heroku/Render)
 - Ensure `Model.pickle` and `cv1` are present in the root directory
 
