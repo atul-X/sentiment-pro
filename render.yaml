@@ -3,5 +3,5 @@ services:
   - type: web
     name: sentiment-pro
     env: python
-    buildCommand: "pip install -r requirements.txt && python setup.py"
+    buildCommand: "./build.sh"
     startCommand: "gunicorn app:app"
