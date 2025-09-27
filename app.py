@@ -1,3 +1,13 @@
+import nltk
+import os
+
+# Add the project's nltk_data directory to the NLTK data path
+# This ensures that the data downloaded during the build is found at runtime.
+project_root = os.path.dirname(os.path.abspath(__file__))
+nltk_data_path = os.path.join(project_root, 'nltk_data')
+if nltk_data_path not in nltk.data.path:
+    nltk.data.path.append(nltk_data_path)
+
 from flask import Flask,render_template,url_for,request, jsonify, redirect
 import pandas as pd
 import numpy as np
