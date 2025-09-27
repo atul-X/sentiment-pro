@@ -6,7 +6,7 @@ gunicorn
 itsdangerous
 lxml
 nltk
-numpy==2.3.3
+numpy
 regex
 requests  # Replaced `request` with `requests`
 rope  # Updated from `rope-py3k`
